@@ -1,14 +1,18 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "k", "a", { noremap = true })
-vim.keymap.set("n", "j", "t", { noremap = true })
-vim.keymap.set("n", "h", "i", { noremap = true })
-vim.keymap.set("n", "l", "u", { noremap = true })
-vim.keymap.set("n", "a", "j", { noremap = true })
-vim.keymap.set("n", "u", "k", { noremap = true })
-vim.keymap.set("n", "i", "h", { noremap = true })
-vim.keymap.set("n", "t", "l", { noremap = true })
+local nvset = function(lhs, rhs)
+    vim.keymap.set({ "n", "v" }, lhs, rhs, { noremap = true })
+end
+
+nvset("k", "a")
+nvset("j", "t")
+nvset("h", "i")
+nvset("l", "u")
+nvset("a", "j")
+nvset("u", "k")
+nvset("i", "h")
+nvset("t", "l")
 
 vim.api.nvim_create_autocmd('filetype', {
     pattern = 'netrw',
