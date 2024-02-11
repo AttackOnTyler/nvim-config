@@ -3,6 +3,15 @@ return {
         'hrsh7th/cmp-nvim-lsp'
     },
     {
+        'hrsh7th/cmp-buffer'
+    },
+    {
+        'hrsh7th/cmp-path'
+    },
+    {
+        'hrsh7th/cmp-nvim-lua'
+    },
+    {
         'L3MON4D3/LuaSnip',
         dependencies = {
             'saadparwaiz1/cmp_luasnip',
@@ -31,6 +40,8 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-i>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.select }),
+                    ["<C-k>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.select }),
                 }),
                 sources = cmp.config.sources({
                     -- {nam = "nvim_lsp" },
